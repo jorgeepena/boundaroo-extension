@@ -1,10 +1,10 @@
 chrome.runtime.onInstalled.addListener(() => {
-    console.log('Content Discovery Extension installed');
+    chrome.storage.sync.set({ token: null });
 });
 
-// Escucha el evento cuando se hace clic en el botón "Bound" en popup.js
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === 'openBound') {
-        chrome.tabs.create({ url: message.url });
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.type === "SET_TOKEN") {
+        chrome.storage.sync.set({ token: request.token });
+        sendResponse({ status: "Token saved" });
     }
 });

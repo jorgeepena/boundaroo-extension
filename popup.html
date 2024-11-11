@@ -2,17 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Discovery</title>
+    <title>Boundaroo</title>
+    <style>
+        button { margin: 5px; padding: 10px 20px; border-radius: 80px; font-size: 22px; background-color: #B9B3AB; }
+    </style>
 </head>
 <body>
-    <h3>¿Te gusta esta página?</h3>
-    <button id="likeButton">Like</button>
-    <button id="dislikeButton">No Like</button>
+    <h1>Boundaroo</h1>
+    
+    <!-- Formularios de autenticación -->
+    <div id="authSection">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="loginBtn">Log In</button>
+        <button id="registerBtn">Register</button>
+    </div>
+    
+    <!-- Sección de contenido (aparece después de autenticarse) -->
+    <div id="contentSection" style="display: none;">
+        <button id="boundBtn">Boundaroo -></button>
 
-    <!-- Botón para encontrar un sitio aleatorio -->
-    <button id="boundButton">Bound</button>
-
+        <button id="likeBtn">I Like</button>
+        <button id="dislikeBtn">Not Good</button>
+    </div>
+    
     <script src="popup.js"></script>
 </body>
 </html>
